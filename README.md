@@ -1,5 +1,6 @@
 # django_cms
-写的第一个djanco_cms项目，实现了基本的数据管理操作，下面是一些框架学习中的小tips
+
+  写的第一个djanco_cms项目，实现了基本的数据管理操作，下面是一些框架学习中的小tips
 
 一.  virtualenv （进阶:wrapper版)
   创建虚拟目录，实现项目之间环境隔离，解决不同拓展包的版本冲突。虚拟路径就是拷贝物理路径基础文件包到一个独立的包，这样方便管理每个项目所需的特定拓展包，不至于全部堆在一起。
@@ -38,22 +39,25 @@ ps: 在做一个项目的时候一定要保证在虚拟环境的cmd下操作
 	最后一行为空行
 	逻辑、原理性知识：
 
-原生文件架构作用 :
-__init__.py : 让py把该目录当成一组模块所需的文件(默认为空)
-urls.py :       网址映射，将用户输入的url映射到后台逻辑视图
-settings.py :全局系统参数设置
-manage.py :django命令行管理工具，用于启动服务(run stop操作本质)、数据库同步、创建管理员等系统管理
-templates :  放置web静态文件，即html文件
-wsgi.py :      定义WSGI接口，用于与Web服务器联动。(django自带小的数据库与服务器做测试用)
 
-安全性:
-  自带安全措施，加入安全代码
+原生文件架构作用 :
+
+	__init__.py : 让py把该目录当成一组模块所需的文件(默认为空)
+	urls.py :       网址映射，将用户输入的url映射到后台逻辑视图
+	settings.py :全局系统参数设置
+	manage.py :django命令行管理工具，用于启动服务(run stop操作本质)、数据库同步、创建管理员等系统管理
+	templates :  放置web静态文件，即html文件
+	wsgi.py :      定义WSGI接口，用于与Web服务器联动。(django自带小的数据库与服务器做测试用)
+	安全性:  自带安全措施，加入安全代码
 
 
 【目标项目描述】
 项目名称：
+
    DjangoCMS用户信息管理系统
+   
 项目需求：
+
 1.用户欢迎页 welcome.html
    要求：能够跳转至主页...
 
@@ -65,6 +69,7 @@ wsgi.py :      定义WSGI接口，用于与Web服务器联动。(django自带小
 
 
 项目部署：
+
 1.新建app应用
 
 	运行manager.py
@@ -96,8 +101,8 @@ wsgi.py :      定义WSGI接口，用于与Web服务器联动。(django自带小
 
 
 原理简述:
+
 	          HttpRequst-> urls ->views ->HttpResponse HTML ->web browser
-	
 	path函数部分原型 path(route, views, name)
 	GET请求特定网页时，通过urls转到views函数，在views函数中先调用models联系数据库，对html进行渲染后返回指定网页。即通过接收请求的页面route属性到函数。
 	POST请求，html的表单对应一个urls(html指定的)，执行函数内容。即通过name属性来到函数。也是先调用models联系数据库，再对html进行渲染后返回指定页面
