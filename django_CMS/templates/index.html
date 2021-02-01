@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CMS首页</title>
+</head>
+<body>
+<h1>请填写您的个人信息到以下表单</h1>
+
+<!--{ '' }为python对html的渲染方式 本来应该写提交到哪个函数映射，与path的name属性有关 去找指定映射从而跳转到函数与return的页面
+     return时 要去找urls渲染-->
+<p>
+    在下表中创建用户
+</p>
+<form action="{% url "index_add" %}" method="post" autocomplete="off">
+    <input type="text" placeholder="姓名" name="username">  <!--name是post变量名-->
+    <input type="password" placeholder="密码" name="password">
+    <input type="submit" value="提交">
+    {%  csrf_token %}      <!--防止攻击-->
+</form>
+
+<p>
+    在下表中删除用户
+</p>
+<form action="{% url "index_delete" %}" method="post" autocomplete="off">
+    <input type="text" placeholder="姓名" name="username">
+    <input type="password" placeholder="密码" name="password">
+    <input type="submit" value="删除">
+    {%  csrf_token %}
+</form>
+
+<p>
+    排除指定账户以外用户
+</p>
+<form action="{% url "index_exclude" %}" method="post" autocomplete="off">
+    <input type="text" placeholder="姓名" name="username">
+    <input type="text" placeholder="密码" name="password">
+    <input type="submit" value="排除">
+    {%  csrf_token %}
+</form>
+
+<a href="{% url "welcome" %}">返回欢迎页</a>
+</body>
+</html>

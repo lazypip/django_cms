@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CMS users</title>
+</head>
+<body>
+<h1>本站所有用户如下：</h1>
+<hr>
+
+{% for user in all_user %}
+    <p>{{ user.username }}</p>
+{% endfor %}
+
+<br>
+<a href="{% url "index" %}">返回首页</a>
+<a href="{% url "logout" %}">退出</a>
+</body>
+</html>
