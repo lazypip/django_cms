@@ -66,29 +66,33 @@ wsgi.py :      定义WSGI接口，用于与Web服务器联动。(django自带小
 
 项目部署：
 1.新建app应用
+
 	运行manager.py
 	startapp CMS , 创建框架
-2.*页面实现
-	前端部分:
+2.页面实现
+
+	(1)前端部分:
 	template构建html页面(构建html页面、配合views中的动态操作)，设置好页面关联信息，结合需求设计出动态框架get post按钮，从而写出待渲染部分{% %}。并作为views函数的编写指南	
 
-	数据库部分:
+	(2)数据库部分:
 	mysql中创建新数据库utf8 utf8_general_ci防止乱码。
 	models数据库联动部分，setting中对app进行注册后，设置目标数据库信息，进行数据迁移(makemig...  migrate)。根据需要在models中继承类并建立数据表（一个或多个）与表单信息，再迁移一次。
 	
 
-	服务器部分:
+	(3)服务器部分:
 	views编写函数，进行页面渲染与返回(进行动态操作，数据库联动、各类语法与返回html页面的方法)，要导入返回方法与数据表单信息。做好从前端与后端的连接。
 	urls建立映射(建立url与views函数映射，name属性为url名与函数名、html名区分开)，要导入views函数
 
 3.admin后台操作:
+
 	创建并注册模块管理类 admin.py
 	创建admin超级用户 createsuperuser
 	登录后台，通过model附属函数装饰后台页面
  
+ 
   admin原理：
-      admin.py为管理模块，admin为模型管理类，使得可以通过后台(web页面形式)直接管理数据库
-要继承admin类创建新的模块(数据表)管理类。admin通过models的连接，使数据库的信息返回的web上，同时通过views、models管理数据库，只是一个通过web形式实现可视化管理的方法
+  
+      admin.py为管理模块，admin为模型管理类，使得可以通过后台(web页面形式)直接管理数据库。要继承admin类创建新的模块(数据表)管理类。admin通过models的连接，使数据库的信息返回的web上，同时通过views、models管理数据库，只是一个通过web形式实现可视化管理的方法
 
 
 原理简述:
@@ -102,6 +106,7 @@ wsgi.py :      定义WSGI接口，用于与Web服务器联动。(django自带小
 
 
 其他高级用法:
+
 1. 模式页面中的拓展
 2. urls映射用正则实现
 3. 高级映射方法：
