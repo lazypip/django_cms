@@ -1,6 +1,6 @@
 # django_cms
 
-#### 写的第一个djanco_cms项目，实现了基本的数据管理操作，下面是一些框架学习中的小tips
+#### 写的第一个djanco_cms项目，实现了基本的数据管理操作，下面是一些自己总结的框架学习中的小tips，分享给大家
 
 #### 一.  virtualenv （进阶:wrapper版)
     
