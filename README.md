@@ -14,8 +14,8 @@
 	deactivate.bat  退出当前环境
                  在虚拟目录下安装django模块
 
-##### ps: 在做一个项目的时候一定要保证在虚拟环境的cmd下操作
-      
+##### ps: 
+      在做一个项目的时候一定要保证在虚拟环境的cmd下操作      
       下载中断报错时更换国内的源
       script 脚本 Lib 库
       下载的包一般会安装到Lib中的site-packages
@@ -23,14 +23,17 @@
 
 
 #### 二. mysql-python驱动
-  py为数据库提供了api。一般pip install pymysql(对于python 3 2用mysqldb)，可用import pymysql测试。mysql默认端口3306，注意xampp与本机数据库同时安装造成的服务冲突(注册表)，一般数据库服务开一个就够了。(xampp msi安装 软件包配置)
+
+     py为数据库提供了api。一般pip install pymysql(对于python 3 2用mysqldb)，可用import pymysql测试。mysql默认端口3306，注意xampp与本机数据库同时安装造成的服务冲突(注册表)，一般数据库服务开一个就够了。(xampp msi安装 软件包配置)
   
 
 #### 三. 使用Navicat连接数据库
-  配置mysql，可用msi/软件包/集成环境，并用Navicat直接安装即可。开启数据库服务后连接数据库。
+
+    配置mysql，可用msi/软件包/集成环境，并用Navicat直接安装即可。开启数据库服务后连接数据库。
 
 #### 四. pycharm创建项目
-  注意是使用现有的ven环境而不是 new ven。由于django里面默认的是MySQLdb，所以要在__init__.py模块里加入以下内容：
+  
+        注意是使用现有的ven环境而不是 new ven。由于django里面默认的是MySQLdb，所以要在__init__.py模块里加入以下内容：
 	import pymysql
 	pymysql.install_as_MySQLdb()	
 
@@ -56,7 +59,7 @@
 # 【目标项目描述】
 ##### 项目名称：
 
-   DjangoCMS用户信息管理系统
+     DjangoCMS用户信息管理系统
    
 ##### 项目需求：
 
